@@ -1,0 +1,51 @@
+<div layout="column" layout-align="center center" layout-fill="layout-fill">
+<div layout="column" class="loginBox md-whiteframe-z1">
+    <md-toolbar>
+      <h2 class="md-toolbar-tools"><span>Complete Sign up</span></h2>
+    </md-toolbar>
+    <md-content layout="column" class="md-padding">
+      <h3 class="md-body-2" style="color:rgba(0,0,0,0.38)"> Choose your style </h3>
+      <div layout="row" flex>
+            <div layout="column" flex>
+                <md-card style="padding:20px" md-theme="{{ addInfo.gender === 'male' ? 'dark-blue' : 'default' }}" md-theme-watch ng-click="setGender('male')">
+                    <img ng-src="../images/avatar.png">
+                </md-card>
+            </div>
+            <div layout="column" flex>
+                <md-card style="padding:20px" md-theme="{{ addInfo.gender === 'female' ? 'dark-blue' : 'default' }}" md-theme-watch ng-click="setGender('female')">
+                    <img ng-src="../images/avatar.png">
+                </md-card>
+            </div>
+      </div>
+      <br/>
+      <br/>
+      <h3 class="md-body-2" style="color:rgba(0,0,0,0.38)">Choose the style you are interested in</h3>      
+      <div layout="row" flex>
+            <div layout="column" flex>
+                <md-card style="padding:20px" md-theme="{{ addInfo.pref === 'male' ? 'dark-blue' : 'default' }}" md-theme-watch ng-click="setPreference('male')">
+                    <img ng-src="../images/avatar.png">
+                </md-card>
+            </div>
+            <div layout="column" flex>
+                <md-card style="padding:20px" md-theme="{{ addInfo.pref === 'female' ? 'dark-blue' : 'default' }}" md-theme-watch ng-click="setPreference('female')">
+                    <img ng-src="../images/avatar.png">
+                </md-card>
+            </div>
+            <div layout="column" flex>
+                <md-card style="padding:20px" md-theme="{{ addInfo.pref === 'both' ? 'dark-blue' : 'default' }}" md-theme-watch ng-click="setPreference('both')">
+                    <img ng-src="../images/avatar.png">
+                </md-card>
+            </div>
+        </div>
+      <br/>
+      <br/>
+      <md-input-container class="md-block">
+          <label>Bio</label>
+          <textarea ng-model="addInfo.bio" md-maxlength="60" rows="1" md-select-on-focus=""></textarea>
+      </md-input-container>
+      <div layout="row" layout-align="center center" style="padding-top:20px;">
+        <md-button class="md-raised md-primary" ng-click="signup()">Complete sign up</md-button>
+      </div>
+    </md-content>
+</div>
+</div>

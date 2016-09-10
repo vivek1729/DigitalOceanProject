@@ -1,0 +1,22 @@
+<div layout="column" layout-align="center center" layout-fill="layout-fill">
+<div layout="column" class="loginBox md-whiteframe-z1">
+    <md-toolbar>
+      <h2 class="md-toolbar-tools"><span>Login</span></h2>
+    </md-toolbar>
+    <md-content layout="column" class="md-padding">
+      <md-input-container>
+        <label>EmailAddress / Pokemon Username</label>
+        <md-icon md-font-library="material-icons">face</md-icon>
+        <input type="text" ng-model="username"/>
+      </md-input-container>
+      <md-input-container>
+        <label>Password</label>
+        <md-icon md-font-library="material-icons">fingerprint</md-icon>
+        <input type="password" ng-model="password"/>
+      </md-input-container>
+      <div layout="row" layout-align="center center" style="padding-top:20px;">
+        <md-button class="md-raised md-primary" ng-click="attemptLogin()">Login</md-button>
+      </div>
+    </md-content>
+</div>
+</div>
