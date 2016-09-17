@@ -24,3 +24,11 @@ body {
 a {
   color: #00B7FF;
 }
+
+#trexLoader{
+  border: none;
+  margin: auto;
+  margin-top: 10%;
+  width: 600px;
+  height: 300px;
+}

@@ -1,5 +1,6 @@
 app
-.controller('LoginController',['$scope', '$http', '$rootScope','$location', function($scope, $http, $rootScope, $location){
+.controller('LoginController',['$scope', '$http', '$rootScope','$location', '$sce', function($scope, $http, $rootScope, $location, $sce){
+	$scope.loading = false;
 	$scope.username = "";
 	$scope.password = "";
 	$scope.addInfo = {gender:null,pref:null,bio:null};
@@ -20,6 +21,7 @@ app
 
 
 	$scope.attemptLogin = function(){
+		$scope.loading = true;
 		var data_obj = {username: $scope.username, password: $scope.password, position: $scope.pos};
 		var payload = JSON.stringify(data_obj);
 		//Do a post request and send payload
@@ -34,6 +36,7 @@ app
 		  }, function errorCallback(response) {
 		    // called asynchronously if an error occurs
 		    // or server returns response with an error status.
+		    $scope.loading = false;
 		  });
 
 	};
@@ -59,4 +62,8 @@ app
 		//One can now send this data to server to complete login Flow.
 	};
 	$scope.initMap(); //Get locations here :)
+
+	$scope.trustSrc = function(url){
+		return $sce.trustAsResourceUrl(url);
+	}
 }]);

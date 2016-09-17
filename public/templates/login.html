@@ -1,5 +1,5 @@
 <div layout="column" layout-align="center center" layout-fill="layout-fill">
-<div layout="column" class="loginBox md-whiteframe-z1">
+<div layout="column" class="loginBox md-whiteframe-z1" id="loginContainer" ng-show="!loading">
     <md-toolbar>
       <h2 class="md-toolbar-tools"><span>Login</span></h2>
     </md-toolbar>
@@ -19,4 +19,5 @@
       </div>
     </md-content>
 </div>
+<iframe id="trexLoader" ng-src="{{trustSrc('templates/trex.html')}}" ng-show="loading"></iframe>
 </div>
