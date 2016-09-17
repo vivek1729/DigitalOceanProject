@@ -9,7 +9,7 @@
           </md-card-title-text>
         </md-card-title>
         <md-card-content>
-          <p><md-icon md-font-library="material-icons">motorcycle</md-icon>     {{ (prospect.dis)/1000 }} Kms away</p>
+          <p><md-icon md-font-library="material-icons">motorcycle</md-icon>     {{ roundDistance(prospect.dis /1000) }} Kms away</p>
           <p>
             {{prospect.obj.bio}}
           </p>

@@ -27,4 +27,8 @@ app
 		$scope.counter = $scope.counter + 1;
 		$scope.prospect = $rootScope.prospects[$scope.counter];
 	};
+
+	$scope.roundDistance = function(x){
+		return Math.round(x);
+	}
 }]);
