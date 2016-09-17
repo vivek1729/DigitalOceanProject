@@ -332,7 +332,6 @@ function Pokeio() {
       var dErr, response;
       try {
         response = ResponseEnvelop.ProfilePayload.decode(f_ret.payload[0]).profile;
-        console.log(response);
       } catch (err) {
         dErr = err;
       }

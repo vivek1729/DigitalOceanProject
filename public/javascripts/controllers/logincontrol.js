@@ -51,7 +51,7 @@ app
 		$http.post("http://localhost:3000/users/completeProfile", JSON.stringify($rootScope.loggedUser))
 		.then(function successCallback(response) {
 			if(response.data.status === "success")
-		    	console.log("Yeppa!!");
+		    	$location.path( "/app" );
 		  }, function errorCallback(response) {
 		    // called asynchronously if an error occurs
 		    // or server returns response with an error status.

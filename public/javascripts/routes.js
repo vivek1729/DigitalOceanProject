@@ -9,6 +9,10 @@ app
     .when("/bio", {
         templateUrl : TPLSOURCE+"bio.html",
         controller: 'LoginController'
+    })
+    .when("/app", {
+        templateUrl : TPLSOURCE+"app.html",
+        controller: 'AppController'
     }).
      otherwise({
       redirectTo: '/login'
