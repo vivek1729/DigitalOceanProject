@@ -58,7 +58,7 @@ router.post('/nearby/:maxdis', function(req,res,next){
     var geoOptions =  {
         spherical: true,
         maxDistance: maxdis,
-        query: { gender: {$in: gender}, pref :{$in:[ req.body.gender, "both" ]}, likes : {$nin: [req.body.username]}}
+        query: { username: {$nin : [req.body.username]}, gender: {$in: gender}, pref :{$in:[ req.body.gender, "both" ]}, likes : {$nin: [req.body.username]}}
     };
     PokeTrainer.geoNear(ref, geoOptions, function(err, results, stats) {
         var locations;
@@ -90,7 +90,9 @@ router.post('/like', function(req,res,next){
 router.post('/login', function(req, res, next) {
   //Initiate Pokemon stuff
   a.init(req.body.username, req.body.password, req.body.position, "ptc", function(err) {
-    if (err) throw err;
+    if (err)
+      { res.send(JSON.stringify({ status: "fail", error: err })); }
+    else {
     var coin = 0;
     var stardust = 0;
     a.GetProfile(function(err, profile) {
@@ -122,9 +124,8 @@ router.post('/login', function(req, res, next) {
           }
           saveProfile(profile,req.body.position, res);
         });
-        
-
-    });
+      });
+     }
    });
 });
 

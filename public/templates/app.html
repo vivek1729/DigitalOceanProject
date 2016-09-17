@@ -1,10 +1,32 @@
 <div layout="column" layout-align="center center" layout-fill="layout-fill">
 <div layout="column" class="loginBox md-whiteframe-z1">
-    <md-toolbar>
-      <h2 class="md-toolbar-tools"><span>Prospects</span></h2>
-    </md-toolbar>
-    <md-content layout="column" class="md-padding">
-      <p>Hello World! This is the app page</p>
-    </md-content>
+	<div flex-xs="" flex-gt-xs="50" layout="column">
+      <md-card style="margin:0px;" ng-show="counter < prospectsLength">
+        <img ng-src="https://material.angularjs.org/latest/img/washedout.png" class="md-card-image" alt="Washed Out">
+        <md-card-title>
+          <md-card-title-text>
+            <span class="md-headline">{{propsect.obj.username}}</span>
+          </md-card-title-text>
+        </md-card-title>
+        <md-card-content>
+          <p><md-icon md-font-library="material-icons">motorcycle</md-icon>     {{ (prospect.dis)/1000 }} Kms away</p>
+          <p>
+            {{prospect.obj.bio}}
+          </p>
+        </md-card-content>
+        <md-card-actions layout="row" layout-align="end center">
+          <md-button class="md-icon-button" aria-label="Favorite">
+            <md-icon style="color:red;" md-font-library="material-icons">favorite</md-icon>
+          </md-button>
+          <md-button class="md-icon-button" aria-label="Stats">
+            <md-icon md-font-library="material-icons">view_module</md-icon>
+          </md-button>
+          <md-button ng-click="nextProspect()" class="md-icon-button" aria-label="Next">
+            <md-icon md-font-library="material-icons">forward</md-icon>
+          </md-button>
+        </md-card-actions>
+      </md-card>
+     </div>
+     <p ng-show="counter >= prospectsLength"> You've run out of options. Come back later? :/</p>
 </div>
 </div>
